@@ -1,0 +1,206 @@
+<!--
+Descricao: Projeto Blog do Matheus
+nome_exercicio: Situação de Aprendizagem 02
+nome_aluno: Matheus Henrique Batista Raimundo
+email_aluno: matheus.raimundo3@aluno.cps.sp.gov.br
+turma: WEBI-ISW028-A
+-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Perfil do usuário no sistema Lumen Gestão.">
+    <title>Meu perfil | Lumen Gestão</title>
+
+    <link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md barra-topo">
+            <div class="container">
+                <a href="perfil.html" class="marca">
+                    <img src="../assets/img/logo.svg" alt="" width="36" height="36">
+                    <span>Lumen <strong>Gestão</strong></span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="menu">
+                    <ul class="navbar-nav ms-auto align-items-md-center gap-md-2">
+                        <li class="nav-item"><a class="nav-link ativo" href="perfil.html" aria-current="page">Meu perfil</a></li>
+                        <li class="nav-item"><a class="nav-link" href="consulta.html">Consulta de entregas</a></li>
+                        <li class="nav-item"><a class="nav-link btn-sair" href="../index.html" data-sair>Sair</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-4 py-md-5">
+
+        <!-- Cabeçalho do perfil -->
+        <section class="perfil-topo mb-4" aria-labelledby="nomeUsuario">
+            <picture>
+                <source type="image/webp"
+                    srcset="../assets/img/capa-perfil-800.webp 800w, ../assets/img/capa-perfil-1600.webp 1600w"
+                    sizes="(max-width: 1320px) 100vw, 1296px">
+                <img src="../assets/img/capa-perfil-1600.jpg"
+                    srcset="../assets/img/capa-perfil-800.jpg 800w, ../assets/img/capa-perfil-1600.jpg 1600w"
+                    sizes="(max-width: 1320px) 100vw, 1296px" width="1600" height="400" alt=""
+                    class="perfil-topo__capa">
+            </picture>
+
+            <div class="perfil-topo__info">
+                <picture>
+                    <source type="image/webp"
+                        srcset="../assets/img/avatar-128.webp 1x, ../assets/img/avatar-256.webp 2x">
+                    <img src="../assets/img/avatar-128.jpg"
+                        srcset="../assets/img/avatar-128.jpg 1x, ../assets/img/avatar-256.jpg 2x"
+                        width="128" height="128" alt="Foto de perfil de Ana Ribeiro" class="avatar">
+                </picture>
+                <div>
+                    <h1 id="nomeUsuario" class="titulo mb-1">Ana Ribeiro</h1>
+                    <p class="texto-suave mb-0">Coordenadora de Operações · Centro de Distribuição Olímpia</p>
+                </div>
+                <span class="selo ms-md-auto">Conta ativa</span>
+            </div>
+        </section>
+
+        <div class="row g-4">
+
+            <!-- Resumo -->
+            <aside class="col-12 col-lg-4">
+                <div class="cartao h-100">
+                    <h2 class="subtitulo">Resumo</h2>
+                    <dl class="lista-dados">
+                        <div>
+                            <dt>Matrícula</dt>
+                            <dd>LM-20431</dd>
+                        </div>
+                        <div>
+                            <dt>Setor</dt>
+                            <dd>Operações</dd>
+                        </div>
+                        <div>
+                            <dt>Nível de acesso</dt>
+                            <dd>Gestor</dd>
+                        </div>
+                        <div>
+                            <dt>Na empresa desde</dt>
+                            <dd>03/2021</dd>
+                        </div>
+                        <div>
+                            <dt>Último acesso</dt>
+                            <dd id="ultimoAcesso">Hoje</dd>
+                        </div>
+                    </dl>
+
+                    <div class="indicadores">
+                        <div class="indicador">
+                            <span class="indicador__numero">128</span>
+                            <span class="indicador__rotulo">Entregas no mês</span>
+                        </div>
+                        <div class="indicador">
+                            <span class="indicador__numero">96%</span>
+                            <span class="indicador__rotulo">No prazo</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Formulário de dados -->
+            <section class="col-12 col-lg-8">
+                <div class="cartao">
+                    <h2 class="subtitulo">Dados pessoais</h2>
+                    <p class="texto-suave">Mantenha seus contatos atualizados para receber os alertas da operação.</p>
+
+                    <div id="alertaPerfil" class="alerta alerta--sucesso d-none" role="status" aria-live="polite"></div>
+
+                    <form id="formPerfil" novalidate>
+                        <fieldset>
+                            <legend class="legenda">Identificação</legend>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="nome" class="form-label">Nome completo</label>
+                                    <input type="text" class="form-control campo" id="nome" name="nome"
+                                        value="Ana Ribeiro" autocomplete="name" required>
+                                    <div class="invalid-feedback">Informe seu nome.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cargo" class="form-label">Cargo</label>
+                                    <input type="text" class="form-control campo" id="cargo" name="cargo"
+                                        value="Coordenadora de Operações" readonly aria-describedby="cargoAjuda">
+                                    <div id="cargoAjuda" class="form-text">Alterado apenas pelo RH.</div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend class="legenda">Contato</legend>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="emailPerfil" class="form-label">E-mail corporativo</label>
+                                    <input type="email" class="form-control campo" id="emailPerfil" name="email"
+                                        value="ana@lumen.com.br" autocomplete="email" required>
+                                    <div class="invalid-feedback">Digite um e-mail válido.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="telefone" class="form-label">Telefone</label>
+                                    <input type="tel" class="form-control campo" id="telefone" name="telefone"
+                                        value="(17) 99812-4410" placeholder="(00) 00000-0000"
+                                        pattern="\(\d{2}\) \d{4,5}-\d{4}" autocomplete="tel" required>
+                                    <div class="invalid-feedback">Use o formato (00) 00000-0000.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="unidade" class="form-label">Unidade</label>
+                                    <select class="form-select campo" id="unidade" name="unidade" required>
+                                        <option value="olimpia" selected>CD Olímpia</option>
+                                        <option value="barretos">CD Barretos</option>
+                                        <option value="rio-preto">CD São José do Rio Preto</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="form-label d-block">Receber alertas por</span>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="alertaEmail" name="alertas" value="email" checked>
+                                        <label class="form-check-label" for="alertaEmail">E-mail</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="alertaSms" name="alertas" value="sms">
+                                        <label class="form-check-label" for="alertaSms">SMS</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="d-flex flex-column flex-sm-row gap-2 justify-content-end mt-4">
+                            <button type="reset" class="btn btn-secundario">Desfazer</button>
+                            <button type="submit" class="btn btn-primario">Salvar alterações</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">Lumen Gestão · Protótipo desenvolvido por NovaWeb Studio</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/sessao.js"></script>
+    <script src="../assets/js/perfil.js"></script>
+</body>
+
+</html>
