@@ -1,5 +1,11 @@
-// Tela de login: validação dos campos e acesso de demonstração.
-// Sem back-end nesta etapa, então o usuário de teste fica definido aqui.
+/*
+Descricao: Projeto Blog do Matheus
+nome_exercicio: SituaÃ§Ã£o de Aprendizagem 02
+nome_aluno: Matheus Henrique Batista Raimundo
+email_aluno: matheus.raimundo3@aluno.cps.sp.gov.br
+turma: WEBI-ISW028-A
+*/
+
 const USUARIO_DEMO = {
     email: "ana@lumen.com.br",
     senha: "lumen123"

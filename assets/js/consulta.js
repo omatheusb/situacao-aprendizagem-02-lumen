@@ -1,4 +1,11 @@
-// Área de consulta: filtro visual da tabela por texto e por status.
+/*
+Descricao: Projeto Blog do Matheus
+nome_exercicio: SituaÃ§Ã£o de Aprendizagem 02
+nome_aluno: Matheus Henrique Batista Raimundo
+email_aluno: matheus.raimundo3@aluno.cps.sp.gov.br
+turma: WEBI-ISW028-A
+*/
+
 const campoPesquisa = document.getElementById("pesquisa");
 const filtroStatus = document.getElementById("filtroStatus");
 const formFiltro = document.getElementById("formFiltro");

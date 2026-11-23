@@ -1,4 +1,11 @@
-// Tela de perfil: data do último acesso e validação do formulário de dados.
+/*
+Descricao: Projeto Blog do Matheus
+nome_exercicio: SituaÃ§Ã£o de Aprendizagem 02
+nome_aluno: Matheus Henrique Batista Raimundo
+email_aluno: matheus.raimundo3@aluno.cps.sp.gov.br
+turma: WEBI-ISW028-A
+*/
+
 const sessao = obterSessao();
 const ultimoAcesso = document.getElementById("ultimoAcesso");
 
